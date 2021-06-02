@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   teste.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: aruth-ra <aruth-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 13:06:01 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/05/29 23:00:12 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/02 00:02:27 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -254,11 +254,19 @@ int main ()
 	{
 		puts(dividir[i]);
 		i++;
-	}*/
-
+	}
 	memset(dest, 'r', 6);
 	size_t len = ft_strlcpy(dest, "lorem ipsum", 3);
 	puts(dest);
 	printf("Tamanho de s = %ld \n", len);
+
+	ft_putchar_fd('s', 1);
+
+	char *ex = "string";
+	ft_putstr_fd(ex, 1);
+
+	ft_putnbr_fd(-2147483648, 1);*/
+	char *ex = "string";
+	ft_putendl_fd(ex, 1);
 	return(0);
 }
