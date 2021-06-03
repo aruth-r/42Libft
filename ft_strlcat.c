@@ -25,6 +25,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	while (dst[i] != '\0')
 		i++;
 	dest = &dst[i];
-	ft_strlcpy(dest, src, dstsize - ft_strlen(dst));
+	ft_strlcpy(dest, src, dstsize - ft_strlen(dst) - 1);
+	dest[dstsize] = '\0';
 	return (ft_strlen(dst));
 }
