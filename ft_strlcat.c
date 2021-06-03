@@ -19,7 +19,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	n = ft_strlen(dst);
 	dest = dst + n;
-	n = dstsize - n -1;
+	n = dstsize - n - 1;
 	ft_memcpy((void *) dest, (void *) src, n);
 	n = ft_strlen(dst);
 	dst[n] = 0;
