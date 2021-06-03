@@ -14,14 +14,11 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char	*dest;
-	size_t	n;
+	unsigned int i;
 
-	n = ft_strlen(dst);
-	dest = dst + n;
-	n = dstsize - n - 1;
-	ft_memcpy((void *) dest, (void *) src, n);
-	n = ft_strlen(dst);
-	dst[n] = 0;
-	return (n);
+	i = 0;
+	while (dst[i] != '\0')
+		i++;
+	ft_strlcpy(dst[i], src, dstsize - ft_strlen(dst));
+	return (ft_strlen(dst));
 }
