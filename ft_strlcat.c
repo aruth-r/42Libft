@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 14:13:52 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/05/29 19:17:21 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/03 23:41:42 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	i;
-	char			*dest;
-	size_t			result;
+	size_t	cat;
+	size_t	len;
 
-	result = ft_strlen(dst) + ft_strlen(src);
-		i = 0;
-	if (dstsize < 1)
-		*dst = '\0';
-	while (dst[i] != '\0')
-		i++;
-	dest = &dst[i];
-	ft_strlcpy(dest, src, dstsize - ft_strlen(dst) - 1);
-	dest[dstsize] = '\0';
-	return (result);
+	cat = 0;
+	len = 0;
+	while (dst[len] != 0 && len < dstsize)
+		len++;
+	cat = len;
+	if (dstsize == 0)
+		return (cat + ft_strlen(src));
+	while (src[len - cat] != 0 && len < dstsize - 1)
+	{
+		dst[len] = src[len - cat];
+		len++;
+	}
+	if (cat < dstsize)
+		dst[len] = 0;
+	return (cat + ft_strlen(src));
 }

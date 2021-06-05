@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   teste.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aruth-ra <aruth-ra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 13:06:01 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/02 00:02:27 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/05 00:17:36 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,17 @@ void	ft_atoi_unlike_test(char *str1, int expected_result)
 		printf("> OK, result: %d\n", ft_buff);
 }
 
+static char		upper(unsigned int i, char c)
+{
+	static int indexArray[33] = {0};
+
+	if (i > 32 || indexArray[i] == 1)
+		write(1, "wrong index\n", 12);
+	else
+		indexArray[i] = 1;
+	return(ft_toupper(c));
+}
+
 int main ()
 {
 	char str[60];
@@ -54,7 +65,9 @@ int main ()
 
 	ft_memset(str, 'c' ,7);
 	puts(str);
-
+	ft_memset(dest, 0 ,1);
+	puts(dest);
+	puts(dest + 1);
 	ft_memcpy(dest, str, 3);
 	puts(dest);
 
@@ -145,12 +158,11 @@ int main ()
 	printf("y = %d \n", y);
 	printf("z = %d \n", z);
 	printf("w = %d \n", w);
-
 	size_t  t = strlen(str);
 	printf("t = %ld \n", t);
 	t = strlen(dest);
 	printf("t = %ld \n", t);
-	t = ft_strlcat(dest, str, 60);
+	t = ft_strlcat(dest, str, 10);
 	puts(dest);
 	printf("t = %ld \n", t);
 	puts(str);
@@ -265,8 +277,20 @@ int main ()
 	char *ex = "string";
 	ft_putstr_fd(ex, 1);
 
-	ft_putnbr_fd(-2147483648, 1);*/
+	ft_putnbr_fd(-2147483648, 1);
 	char *ex = "string";
 	ft_putendl_fd(ex, 1);
+	printf("tamanho do número: %ld \n", ft_nbrlen(-2564));
+	char *itoa = ft_itoa(-2564);
+	puts(itoa);
+
+	puts(ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", "\t \n"));
+	puts(ft_strtrim("lorem ipsum dolor sit amet \n \t ", "\t \n"));
+	puts(ft_strtrim(" \n \t lorem ipsum dolor sit amet", "\t \n"));
+	puts(ft_strtrim("  \n  \t  lorem \n ipsum \t dolor \n sit \t amet  \t \n ", "\t \n"));
+	puts(ft_strtrim("          ", "\t \n"));*/
+
+	char *mapi = ft_strmapi(str, &upper);
+	puts(mapi);
 	return(0);
 }

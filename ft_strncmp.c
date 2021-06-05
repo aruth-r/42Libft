@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 16:50:06 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/05/29 19:18:01 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/03 23:42:05 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	return (memcmp (s1, s2, n));
+	return (memcmp(s1, s2, n));
 }

@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 19:40:48 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/05/29 19:14:50 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/03 23:38:10 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(size * count);
 	if (ptr == 0)
 		return (0);
-	ft_bzero (ptr, size * count);
+	ft_bzero(ptr, size * count);
 	return (ptr);
 }

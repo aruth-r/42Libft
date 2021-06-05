@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/24 19:14:44 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/05/29 19:13:31 by aruth-ra         ###   ########.fr       */
+/*   Created: 2021/06/04 23:37:50 by aruth-ra          #+#    #+#             */
+/*   Updated: 2021/06/05 00:07:42 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c == '\f' || c == '\n' || c == '\r' ||\
-		c == '\t' || c == '\v' || c == ' ')
-		return (1);
-	else
+	unsigned int	i;
+	char			*string;
+
+	i = 0;
+	if (*s == 0)
 		return (0);
+	if (!(string = (char *)malloc((ft_strlen(s) + 1) * sizeof(char))))
+		return (0);
+	while (s[i])
+	{
+		string[i] = f(i, s[i]);
+		i++;
+	}
+	string[i] = '\0';
+	return (string);
 }
