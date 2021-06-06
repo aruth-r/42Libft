@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 12:32:09 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/05/14 13:12:26 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/06 20:33:32 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	destchar = dest;
 	srcchar = src;
+	if (*srcchar == 0)
+			*destchar == 0;
 	while (n-- > 0)
 		*destchar++ = *srcchar++;
 	return (dest);
