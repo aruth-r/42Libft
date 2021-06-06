@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 23:40:27 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/06 14:34:44 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/06 14:54:35 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static size_t	ft_wordlen(char const *s, char c)
 	return (i);
 }
 
-static char		*ft_word(const char *s, char c)
+static char	*ft_word(const char *s, char c)
 {
 	char	*word;
 
@@ -61,7 +61,7 @@ static char		*ft_word(const char *s, char c)
 	return (word);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**split;
 	size_t	wc;
@@ -69,7 +69,8 @@ char			**ft_split(char const *s, char c)
 
 	wc = ft_wordcount(s, c);
 	i = 0;
-	if (!(split = (char**)malloc((wc + 1) * sizeof(char*))) || *s == 0)
+	split = (char**)malloc((wc + 1) * sizeof(char*));
+	if ( split == 0 || *s == 0)
 		return (0);
 	while (i < wc)
 	{

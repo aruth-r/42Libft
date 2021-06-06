@@ -6,13 +6,13 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 16:47:31 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/04 23:30:55 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/06 14:52:52 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strtrim(char const *s, char const *set)
+char	*ft_strtrim(char const *s, char const *set)
 {
 	size_t	end;
 	size_t	len;

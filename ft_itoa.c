@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:19:54 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/05 00:22:04 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/06 14:55:49 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,21 @@ static size_t	ft_nbrlen(int n)
 	return (i);
 }
 
-static int		ft_ispos(int n)
+static int	ft_ispos(int n)
 {
 	if (n < 0)
 		return (0);
 	return (1);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	unsigned int	nb;
 	char			*itoa;
 	size_t			i;
 
-	if (!(itoa = (char *)malloc(ft_nbrlen(n) + 1)))
+	itoa = (char *)malloc(ft_nbrlen(n) + 1);
+	if (itoa == 0)
 		return (0);
 	i = 0;
 	if (n < 0)
