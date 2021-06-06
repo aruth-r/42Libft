@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 19:09:00 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/06 14:53:39 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/06 15:00:23 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_isspace(int c)
 		return (0);
 }
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	sgn;
 	int	nbr;
