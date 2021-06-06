@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:31:34 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/05/29 19:12:20 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/06 18:08:48 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	join2 = join + ft_strlen(s1);
 	ft_memcpy(join, s1, ft_strlen(s1));
 	ft_memcpy(join2, s2, ft_strlen(s2));
+	join[ft_strlen(join)] = 0;
 	return (join);
 }
