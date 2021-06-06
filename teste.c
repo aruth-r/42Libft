@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 13:06:01 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/06 19:35:25 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/06 19:49:05 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -360,8 +360,7 @@ int main ()
 		i++;
 	}*/
 	memset(dest, 'A', 60);
-	int *r = (int *)ft_memccpy(dest, "42", '2', 1);
+	printf("valor: %p \n", ft_memccpy(dest, "B", 0, 10));
 	puts(dest);
-	printf("memcpy = %d \n", *r);
 	return(0);
 }
