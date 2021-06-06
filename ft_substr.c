@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:07:39 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/05/29 19:19:01 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/06 18:31:17 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!sub)
 		return (0);
 	ft_memcpy(sub, st, len);
+	sub[len] = 0;
 	return (sub);
 }
