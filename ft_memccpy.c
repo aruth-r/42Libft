@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 13:14:37 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/06 19:23:14 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/06 19:30:45 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 		destchar[i] = srcchar[i];
 		i++;
 	}
-	printf("n= %ld", n);
 	if (srcchar[i] == stop && i != n)
 	{
 		destchar[i] = srcchar[i];
