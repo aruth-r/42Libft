@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 19:09:00 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/08 22:54:09 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/08 22:57:13 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	ft_atoi(const char *str)
 
 	sgn = 1;
 	nbr = 0;
-
 	while (ft_isspace((int)*str) == 1)
 		str++;
 	if (*str == '-' || *str == '+')
