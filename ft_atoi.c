@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 19:09:00 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/08 21:42:53 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/08 22:44:13 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	if (nbr * sgn > 2147483647 || nbr * sgn < -2147483648)
-		return(0);
+		return(-1);
 	return ((int)nbr * sgn);
 }
