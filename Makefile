@@ -6,7 +6,7 @@
 #    By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/29 18:59:40 by aruth-ra          #+#    #+#              #
-#    Updated: 2021/06/06 11:43:06 by aruth-ra         ###   ########.fr        #
+#    Updated: 2021/06/14 20:23:29 by aruth-ra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ CC		= gcc
 
 RM		= rm -f
 
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Wall -Wextra -Werror
 
 AR		= ar rcs
 
 HEADERS = libft.h
 
-SRC		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
+FILES		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_memchr.c ft_memcmp.c ft_strlen.c ft_isalpha.c ft_isdigit.c \
 		  ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c \
 		  ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strlcpy.c \
@@ -34,25 +34,23 @@ SRC		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 .c.o:
 			$(CC) $(CFLAGS) $(HEADERS) -c $< -o $(<:.c=.o)
 
-OBJ		= $(SRC:.c=.o)
-
-OBJ_B	= $(SRCBON:.c=.o)
+OBJECTS		= $(FILES:.c=.o)
 
 $(NAME):
-				@$(CC) $(CFLAGS) -c $(SRC)
-				@$(AR) $(NAME) $(OBJ)
-				@echo "[INFO] Libray [$(NAME)] created!"
+				@$(CC) $(CFLAGS) -c $(FILES)
+				@$(AR) $(NAME) $(OBJECTS)
+				@echo "Library created!"
 
 all:		$(NAME)
 
 clean:
-			@$(RM) $(OBJ) $(OBJ_B)
-			@echo "[INFO] Objects removed!"
+			@$(RM) $(OBJECTS)
+			@echo "Clean"
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@echo "[INFO] Library [$(NAME)] removed!"
+			@echo "Library removed"
 
 re:			fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

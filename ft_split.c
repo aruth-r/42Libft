@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 23:40:27 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/06 15:01:15 by aruth-ra         ###   ########.fr       */
+/*   Created: 2021/06/12 01:57:04 by aruth-ra          #+#    #+#             */
+/*   Updated: 2021/06/12 01:57:26 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,18 @@ static size_t	ft_wordcount(char const *s, char c)
 {
 	size_t	i;
 
+	if (s == 0)
+		return (0);
 	i = 0;
-	while (*s == c)
-		s++;
-	if (*s != c && *s != 0)
+	while (*s != 0)
 	{
-		i++;
-		while (*s != 0)
-		{
-			if (*s == c && *(s + 1) != c && *(s + 1) != 0)
-				i++;
+		while (*s == c && *s != 0)
 			s++;
+		if (*s != c && *s != 0)
+		{
+			i++;
+			while (*s != c && *s != 0)
+				s++;
 		}
 	}
 	return (i);
@@ -37,8 +38,6 @@ static size_t	ft_wordlen(char const *s, char c)
 	size_t	i;
 
 	i = 0;
-	while (*s == c)
-		s++;
 	while (*s != c && *s != 0)
 	{
 		i++;
@@ -47,42 +46,50 @@ static size_t	ft_wordlen(char const *s, char c)
 	return (i);
 }
 
-static char	*ft_word(const char *s, char c)
+static char	**free_tab(char **tab)
 {
-	char	*word;
+	while (*tab)
+	{
+		free(*tab);
+		tab++;
+	}
+	free(tab);
+	return (0);
+}
 
-	word = (char *)malloc(ft_wordlen(s, c) * sizeof(char) + 1);
-	if (word == 0)
-		return (0);
-	while (*s == c && *(s + 1) == c)
-		s++;
-	word = ft_substr(ft_strchr(s, c), 1, ft_wordlen(s, c));
-	word[ft_wordlen(s, c)] = '\0';
-	return (word);
+static char	**ft_allocate(char **split, const char *s, char c, size_t wc)
+{
+	size_t		wordlen;
+	size_t		i;
+	size_t		j;
+
+	i = 0;
+	j = 0;
+	while (s[i] != 0 && j < wc)
+	{
+		if (s[i] != c)
+		{
+			wordlen = ft_wordlen(&s[i], c);
+			split[j] = ft_substr(s, i, wordlen);
+			if (!split[j])
+				return (free_tab(split));
+			j++;
+			i += wordlen - 1;
+		}
+		i++;
+	}
+	split[j] = 0;
+	return (split);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
-	size_t	wc;
-	size_t	i;
+	char		**split;
+	size_t		words_count;
 
-	wc = ft_wordcount(s, c);
-	i = 0;
-	split = (char **)malloc((wc + 1) * sizeof(char *));
-	if (split == 0 || *s == 0)
+	words_count = ft_wordcount(s, c);
+	split = (char **)malloc((words_count + 1) * sizeof(char *));
+	if (split == 0 || s == 0)
 		return (0);
-	while (i < wc)
-	{
-		if (*s == c)
-			split[i] = ft_word(s, c);
-		else
-			split[i] = ft_substr(s, 0, ft_wordlen(s, c));
-		while (*s == c)
-			s++;
-		s = ft_strchr(s, c);
-		i++;
-	}
-	split[wc] = 0;
-	return (split);
+	return (ft_allocate(split, s, c, words_count));
 }

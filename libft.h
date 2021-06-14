@@ -6,13 +6,12 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 13:01:42 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/04 23:51:11 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/12 02:24:23 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 

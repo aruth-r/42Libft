@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 16:51:55 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/05/29 19:18:35 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/14 20:13:04 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (n-- > 0)
 	{
 		x = (unsigned char *)s + n;
-		if (*x == c)
+		if (*x == (char)c)
 			return ((char *)x);
 	}
 	return (0);
