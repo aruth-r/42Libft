@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:07:39 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/14 20:07:51 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/14 20:39:22 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 	char	*st;
 
+	if (s == 0)
+		return (0);
 	st = (char *)s + start;
 	if (start > ft_strlen(s) || len == 0)
 	{

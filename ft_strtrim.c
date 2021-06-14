@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 16:47:31 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/14 20:13:08 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/14 20:43:16 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ char	*ft_strtrim(char const *s, char const *set)
 	size_t	len;
 	char	*trim;
 
+	if (s == 0 || set == 0)
+		return(0);
 	if (*s == 0 )
 	{
-		trim = (char *)calloc(1, sizeof(char));
+		trim = (char *)ft_calloc(1, sizeof(char));
 		if (trim == 0)
 			return (0);
 		return (trim);
