@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 23:51:41 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/06/14 20:45:24 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/06/14 20:55:27 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (s == 0)
-		return (0);
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	if (s != 0)
+		{
+			ft_putstr_fd(s, fd);
+			ft_putchar_fd('\n', fd);
+		}
 }
